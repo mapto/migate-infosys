@@ -1,0 +1,57 @@
+entity Country {}
+
+entity Language {}
+
+entity Person {
+	name String required
+    gender String
+    dob Instant
+}
+
+entity Institution {
+	name String
+}
+
+// actually piece of work, product
+entity Work {
+    name String
+    published Instant
+}
+
+entity RoleWork{
+	name String
+    start Instant
+    end Instant
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	address String
+}
+
+entity RoleInstitution{
+	name String
+    start Instant
+    end Instant
+}
+
+relationship OneToMany {
+    Person to Language
+    Person to Country
+
+	Institution to Location{sites}
+    
+    Country to Location{places}
+}
+
+relationship ManyToMany {
+	Work to Person
+    Work to Institution
+
+    Person to RoleInstitution
+	Institution to RoleInstitution
+
+    Person to RoleWork
+	Work to RoleWork
+}
