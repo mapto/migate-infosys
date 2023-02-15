@@ -1,0 +1,34 @@
+{
+  "applications": "*",
+  "changelogDate": "20230215135217",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "location",
+  "fields": [
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "not an ignored comment",
+  "jpaMetamodelFiltering": false,
+  "name": "Location",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "institution",
+      "otherEntityRelationshipName": "location",
+      "relationshipName": "sites",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "country",
+      "otherEntityRelationshipName": "location",
+      "relationshipName": "places",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

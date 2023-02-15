@@ -1,0 +1,41 @@
+{
+  "applications": "*",
+  "changelogDate": "20230215135214",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "institution",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Institution",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "sites",
+      "relationshipName": "location",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "roleInstitution",
+      "otherEntityRelationshipName": "institution",
+      "ownerSide": true,
+      "relationshipName": "roleInstitution",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "work",
+      "otherEntityRelationshipName": "institution",
+      "ownerSide": false,
+      "relationshipName": "work",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Location.
+    -->
+    <changeSet id="20230215135217-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="sites_id"
+                                 baseTableName="location"
+                                 constraintName="fk_location__sites_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="institution"/>
+
+        <addForeignKeyConstraint baseColumnNames="places_id"
+                                 baseTableName="location"
+                                 constraintName="fk_location__places_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="country"/>
+    </changeSet>
+</databaseChangeLog>
