@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Person.
+    -->
+    <changeSet id="20230215135213-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="person_id"
+                                 baseTableName="rel_person__role_institution"
+                                 constraintName="fk_rel_person__role_institution__person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="person"/>
+
+        <addForeignKeyConstraint baseColumnNames="role_institution_id"
+                                 baseTableName="rel_person__role_institution"
+                                 constraintName="fk_rel_person__role_institution__role_institution_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role_institution"/>
+
+        <addForeignKeyConstraint baseColumnNames="person_id"
+                                 baseTableName="rel_person__role_work"
+                                 constraintName="fk_rel_person__role_work__person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="person"/>
+
+        <addForeignKeyConstraint baseColumnNames="role_work_id"
+                                 baseTableName="rel_person__role_work"
+                                 constraintName="fk_rel_person__role_work__role_work_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role_work"/>
+    </changeSet>
+</databaseChangeLog>

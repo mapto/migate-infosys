@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20230215135218",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "role_institution",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "start",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "end",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "RoleInstitution",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "person",
+      "otherEntityRelationshipName": "roleInstitution",
+      "ownerSide": false,
+      "relationshipName": "person",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "institution",
+      "otherEntityRelationshipName": "roleInstitution",
+      "ownerSide": false,
+      "relationshipName": "institution",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

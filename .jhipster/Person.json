@@ -1,0 +1,63 @@
+{
+  "applications": "*",
+  "changelogDate": "20230215135213",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "person",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dob",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Person",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "language",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "language",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "country",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "country",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "roleInstitution",
+      "otherEntityRelationshipName": "person",
+      "ownerSide": true,
+      "relationshipName": "roleInstitution",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "roleWork",
+      "otherEntityRelationshipName": "person",
+      "ownerSide": true,
+      "relationshipName": "roleWork",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "work",
+      "otherEntityRelationshipName": "person",
+      "ownerSide": false,
+      "relationshipName": "work",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

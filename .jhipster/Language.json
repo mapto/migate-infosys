@@ -1,0 +1,22 @@
+{
+  "applications": "*",
+  "changelogDate": "20230215135212",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "language",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Language",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "person",
+      "otherEntityRelationshipName": "language",
+      "relationshipName": "person",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

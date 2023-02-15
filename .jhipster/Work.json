@@ -1,0 +1,46 @@
+{
+  "applications": "*",
+  "changelogDate": "20230215135215",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "work",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "published",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Work",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "person",
+      "otherEntityRelationshipName": "work",
+      "ownerSide": true,
+      "relationshipName": "person",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "institution",
+      "otherEntityRelationshipName": "work",
+      "ownerSide": true,
+      "relationshipName": "institution",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "roleWork",
+      "otherEntityRelationshipName": "work",
+      "ownerSide": true,
+      "relationshipName": "roleWork",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}
