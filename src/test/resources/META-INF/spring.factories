@@ -1,0 +1,1 @@
+org.springframework.test.context.ContextCustomizerFactory = it.unimi.dllcm.migate.config.TestContainersSpringContextCustomizerFactory
