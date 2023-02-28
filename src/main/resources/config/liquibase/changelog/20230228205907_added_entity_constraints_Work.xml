@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Work.
+    -->
+    <changeSet id="20230228205907-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="work_id"
+                                 baseTableName="rel_work__responsible"
+                                 constraintName="fk_rel_work__responsible__work_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="work"/>
+
+        <addForeignKeyConstraint baseColumnNames="responsible_id"
+                                 baseTableName="rel_work__responsible"
+                                 constraintName="fk_rel_work__responsible__responsible_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="person"/>
+
+        <addForeignKeyConstraint baseColumnNames="work_id"
+                                 baseTableName="rel_work__sponsor"
+                                 constraintName="fk_rel_work__sponsor__work_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="work"/>
+
+        <addForeignKeyConstraint baseColumnNames="sponsor_id"
+                                 baseTableName="rel_work__sponsor"
+                                 constraintName="fk_rel_work__sponsor__sponsor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="institution"/>
+
+        <addForeignKeyConstraint baseColumnNames="work_id"
+                                 baseTableName="rel_work__role"
+                                 constraintName="fk_rel_work__role__work_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="work"/>
+
+        <addForeignKeyConstraint baseColumnNames="role_id"
+                                 baseTableName="rel_work__role"
+                                 constraintName="fk_rel_work__role__role_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role_work"/>
+    </changeSet>
+</databaseChangeLog>

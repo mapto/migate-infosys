@@ -1,0 +1,46 @@
+{
+  "applications": "*",
+  "changelogDate": "20230228205908",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "role_work",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "start",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "end",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "RoleWork",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "person",
+      "otherEntityRelationshipName": "responsibility",
+      "ownerSide": false,
+      "relationshipName": "person",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "work",
+      "otherEntityRelationshipName": "role",
+      "ownerSide": false,
+      "relationshipName": "work",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

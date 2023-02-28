@@ -1,0 +1,69 @@
+{
+  "applications": "*",
+  "changelogDate": "20230228205905",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "person",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "Gender",
+      "fieldValues": "MALE,FEMALE,OTHER,UNSPECIFIED"
+    },
+    {
+      "fieldName": "dob",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dod",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "Country",
+      "fieldValues": "UNITED_STATES,UNITED_KINGDOM,GERMANY,AUSTRIA,SWITZERLAND,FRANCE,ITALY,SPAIN,RUSSIA"
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "Language",
+      "fieldValues": "ENGLISH,SPANISH,FRENCH,RUSSIAN,GERMAN,ITALIAN"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Person",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "roleInstitution",
+      "otherEntityRelationshipName": "person",
+      "ownerSide": true,
+      "relationshipName": "job",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "roleWork",
+      "otherEntityRelationshipName": "person",
+      "ownerSide": true,
+      "relationshipName": "responsibility",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "work",
+      "otherEntityRelationshipName": "responsible",
+      "ownerSide": false,
+      "relationshipName": "work",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}
