@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Institution.
+    -->
+    <changeSet id="20230228205906-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="institution_id"
+                                 baseTableName="rel_institution__role"
+                                 constraintName="fk_rel_institution__role__institution_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="institution"/>
+
+        <addForeignKeyConstraint baseColumnNames="role_id"
+                                 baseTableName="rel_institution__role"
+                                 constraintName="fk_rel_institution__role__role_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role_institution"/>
+
+        <addForeignKeyConstraint baseColumnNames="site_id"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__site_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"/>
+    </changeSet>
+</databaseChangeLog>
